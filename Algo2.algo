@@ -1,0 +1,29 @@
+PROCEDURE dot_product (v1: ARRAY_OF INTEGER, v2: ARRAY_OF INTEGER, VAR PS:INTEGER )
+VAR
+    v1x:INTEGER :=v1[1]-v1[0]
+    v1y:INTEGER :=v1[3]-v1[2]
+    v2x:INTEGER :=v2[1]-v2[0]
+    v2y:INTEGER :=v2[3]-v2[2]
+
+BEGIN
+    PS:=v1x*v2x+v1y*v2y
+    write (PS)
+END
+ALGORITHM Dot product
+VAR
+    vecteur1 : ARRAY_OF INTEGER;
+    vecteur2 : ARRAY_OF INTEGER;
+    result : INTEGER:=0
+    i: INTEGER
+
+BEGIN
+    FOR i FROM 0 TO 3 STEP 1  DO
+        Read (vecteur1,vecteur2)
+    END_FOR
+    dot_product(vecteur1,vecteur2,result)
+    IF (result=0) THEN
+        write ("Les deux vecteurs sont ortogonaux")
+        ELSE
+        write ("Les deux vecteurs ne sont pas ortogonaux")
+
+END
